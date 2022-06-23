@@ -8,21 +8,12 @@
 // console.log("<<...>>", __dirname);
 // console.log("<<...>>", __filename);
 
-
-
-
 // {3.} HTTP core modules
 
-const http = require('http')
+const http = require("http");
 
-http.createServer((req,res)=>{
-
-
-
-
-  
-}).listen(8080)
-
-
-
-
+http
+  .createServer((req, res) => {
+    res.write("<h1>This is my world</h1>");
+  })
+  .listen(8080);
