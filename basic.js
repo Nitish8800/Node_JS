@@ -101,3 +101,29 @@
 // // {Delete file}
 
 // // fs.unlinkSync(`${dirPath}/fruit.txt`);
+
+// // // /<<<<>>>>>>>>>>{ {9.} Node JS in Hindi # 15 Asynchronous Programming Language
+
+// let a = 20;
+
+// setTimeout(() => {
+//     console.log(a+1);
+// }, 2000);
+
+// a = 10;
+
+// // // /<<<<>>>>>>>>>>{ {9.} Node JS in Hindi # 16 Handle Asynchronous Data
+
+let a = 20;
+let b = 0;
+
+let waitingData = new Promise((res, rej) => {
+  setTimeout(() => {
+    res(40);
+  }, 2000);
+});
+
+waitingData.then((el) => {
+  b = el;
+  console.log(a + b);
+});
