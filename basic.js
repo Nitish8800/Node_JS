@@ -28,11 +28,23 @@
 
 //<<<<>>>>>>>>>>{ {6.} Simple and basic API
 
-const http = require("http");
-http
-  .createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "applicationjson" });
-    res.write(JSON.stringify({ name: "Nitish Kumar", email: "nk@test" }));
-    res.end();
-  })
-  .listen(5000);
+// const http = require("http");
+// const data = require("./data");
+
+// http
+//   .createServer((req, res) => {
+//     res.writeHead(200, { "Content-Type": "applicationjson" });
+//     res.write(JSON.stringify(data));
+//     res.end();
+//   })
+//   .listen(5000);
+
+// /<<<<>>>>>>>>>>{ {7.} Getting input from command line
+
+const fs = require("fs");
+
+const input = process.argv;
+
+
+
+fs.writeFileSync(input[2], input[3]);
