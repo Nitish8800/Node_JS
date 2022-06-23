@@ -53,9 +53,13 @@
 //   console.log("Invalid Output");
 // }
 
-
 // // /<<<<>>>>>>>>>>{ {7.} Display file list from folder
 
+const fs = require("fs");
+const path = require("path");
+const dirPath = path.join(__dirname, "files");
+// console.log(dirPath)
 
-
-
+for (var i = 1; i <= 5; i++) {
+  fs.writeFileSync(dirPath + `/hello${i}.txt`, `A simple text file ${i}`);
+}
