@@ -1,19 +1,28 @@
-//{ 1.} // Create new file by code in nodejs fs
+//<<<<>>>>>>>>>>{ 1.} // Create new file by code in nodejs fs
 
 // const fs = require("fs");
 // // console.log("code step by step");
 // fs.writeFileSync("app.txt", "NiKU");
 
-// {2.} // for checking directory
+////<<<<>>>>>>>>>>{ {2.} // for checking directory
 // console.log("<<...>>", __dirname);
 // console.log("<<...>>", __filename);
 
-// {3.} HTTP core modules
+// //<<<<>>>>>>>>>>{ {3.} HTTP core modules {Create Server}
 
-const http = require("http");
+// const http = require("http");
 
-http
-  .createServer((req, res) => {
-    res.write("<h1>This is my world</h1>");
-  })
-  .listen(8080);
+// http
+//   .createServer((req, res) => {
+//     res.write("<h1>This is my world</h1>");
+//     res.end();
+//   })
+//   .listen(8080);
+
+//<<<<>>>>>>>>>>{ {4.} HTTP core modules {Create Server}
+
+
+
+
+
+
