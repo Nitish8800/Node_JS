@@ -24,3 +24,4 @@
 const colors = require("colors");
 
 console.log("Hello".red);
+console.warn("NIKU".blue);
