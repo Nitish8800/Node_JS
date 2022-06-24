@@ -114,16 +114,16 @@
 
 // // // /<<<<>>>>>>>>>>{ {9.} Node JS in Hindi # 16 Handle Asynchronous Data
 
-let a = 20;
-let b = 0;
+// let a = 20;
+// let b = 0;
 
-let waitingData = new Promise((res, rej) => {
-  setTimeout(() => {
-    res(40);
-  }, 2000);
-});
+// let waitingData = new Promise((res, rej) => {
+//   setTimeout(() => {
+//     res(40);
+//   }, 2000);
+// });
 
-waitingData.then((el) => {
-  b = el;
-  console.log(a + b);
-});
+// waitingData.then((el) => {
+//   b = el;
+//   console.log(a + b);
+// });
