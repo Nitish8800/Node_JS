@@ -1,22 +1,35 @@
-/* <>
-  ------  Node JS in Hindi #39 Mongoose with node  -------------------
-</>; */
+const express = require("express");
+const connectDB = require("./config");
+const Product = require("./product");
+const app = express();
 
-const mongoose = require("mongoose");
+connectDB();
+app.use(express.json());
+app.post("/create", async (req, resp) => {
+  let data = new Product(req.body);
+  const result = await data.save();
+  resp.send(result);
+});
 
-const main = async () => {
-  await mongoose.connect("mongodb://localhost:27017/ecommerce");
+app.get("/list", async (req, resp) => {
+  let data = await Product.find();
+  resp.send(data);
+});
 
-  const productSchema = new mongoose.Schema({
-    name: String,
-  });
+app.delete("/delete/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await Product.deleteOne(req.params);
+  resp.send(data);
+});
 
-  const ProductsModel = mongoose.model("products", productSchema);
-  let data = new ProductsModel({
-    name: "Colgate Maxfresh Blue Gel Peppermint Ice Toothpaste",
-  });
-  let res = await data.save();
+app.patch("/update/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await Product.updateOne(req.params, { $set: req.body });
+  resp.send(data);
+})
 
-  console.log(res);
-};
-main();
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log("Server is running on " + port);
+});
