@@ -12,7 +12,6 @@ app.post("/create", async (req, resp) => {
 });
 
 app.get("/list", async (req, resp) => {
-
   
   let data = await Product.find();
   resp.send(data);
