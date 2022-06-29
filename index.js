@@ -45,30 +45,39 @@
 //   console.log("Server is running on " + port);
 // });
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<  Node JS in Hindi #44 Upload File  >>>>>>>>>>>>>>>>>
- 
-const express = require("express");
-const multer = require("multer");
+// //<<<<<<<<<<<<<<<<<<<<<<<<<  Node JS in Hindi #44 Upload File  >>>>>>>>>>>>>>>>>
 
-const app = express();
+// const express = require("express");
+// const multer = require("multer");
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "uploads");
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + "-" + Date.now() + ".jpg");
-    },
-  }),
-}).single("user_file");
+// const app = express();
 
-app.post("/upload", upload, (req, resp) => {
-  resp.send("file upload");
-});
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, "uploads");
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + "-" + Date.now() + ".jpg");
+//     },
+//   }),
+// }).single("user_file");
 
-const port = process.env.PORT || 5000;
+// app.post("/upload", upload, (req, resp) => {
+//   resp.send("file upload");
+// });
 
-app.listen(port, () => {
-  console.log("Server is running on " + port);
-});
+// const port = process.env.PORT || 5000;
+
+// app.listen(port, () => {
+//   console.log("Server is running on " + port);
+// });
+
+// //<<<<<<<<<<<<<<<<<<<<<<<<<  Node JS in Hindi #45 OS modulee  >>>>>>>>>>>>>>>>>
+
+const os = require("os");
+// console.log(os.arch());
+// console.log(os.freemem()/(1024*1024*1024));
+// console.log(os.totalmem()/(1024*1024*1024));
+// console.log(os.platform());
+console.log(os.userInfo());
