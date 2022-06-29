@@ -17,6 +17,7 @@ app.get("/list", async (req, resp) => {
 });
 
 app.delete("/delete/:_id", async (req, resp) => {
+  
   console.log(req.params);
   let data = await Product.deleteOne(req.params);
   resp.send(data);
@@ -26,7 +27,7 @@ app.patch("/update/:_id", async (req, resp) => {
   console.log(req.params);
   let data = await Product.updateOne(req.params, { $set: req.body });
   resp.send(data);
-})
+});
 
 const port = process.env.PORT || 5000;
 
