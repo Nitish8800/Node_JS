@@ -6,29 +6,28 @@ const app = express();
 connectDB();
 app.use(express.json());
 
-// app.post("/create", async (req, resp) => {
-//   let data = new Product(req.body);
-//   const result = await data.save();
-//   resp.send(result);
-// });
+app.post("/create", async (req, resp) => {
+  let data = new Product(req.body);
+  const result = await data.save();
+  resp.send(result);
+});
 
-// app.get("/list", async (req, resp) => {
-//   let data = await Product.find();
-//   resp.send(data);
-// });
+app.get("/list", async (req, resp) => {
+  let data = await Product.find();
+  resp.send(data);
+});
 
-// app.delete("/delete/:_id", async (req, resp) => {
+app.delete("/delete/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await Product.deleteOne(req.params);
+  resp.send(data);
+});
 
-//   console.log(req.params);
-//   let data = await Product.deleteOne(req.params);
-//   resp.send(data);
-// });
-
-// app.patch("/update/:_id", async (req, resp) => {
-//   console.log(req.params);
-//   let data = await Product.updateOne(req.params, { $set: req.body });
-//   resp.send(data);
-// });
+app.patch("/update/:_id", async (req, resp) => {
+  console.log(req.params);
+  let data = await Product.updateOne(req.params, { $set: req.body });
+  resp.send(data);
+});
 
 app.get("/search/:key", async (req, resp) => {
   let data = await Product.find({
@@ -39,7 +38,6 @@ app.get("/search/:key", async (req, resp) => {
   });
   resp.send(data);
 });
-
 
 const port = process.env.PORT || 5000;
 
